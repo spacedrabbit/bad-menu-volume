@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication"/>
@@ -12,10 +13,18 @@
                 <outlet property="delegate" destination="gm3-L7-WB3" id="yFl-H4-gXa"/>
             </connections>
         </customObject>
+        <customObject id="4gL-KN-V3U" customClass="WeatherView" customModule="bad_menu_volume" customModuleProvider="target">
+            <connections>
+                <outlet property="imageView" destination="wq7-oA-zBn" id="j6I-H9-cCl"/>
+                <outlet property="tempMinMax" destination="iho-0W-0NK" id="Tpa-1A-aqI"/>
+                <outlet property="temperatureText" destination="yau-Az-tzQ" id="So0-YA-I8a"/>
+            </connections>
+        </customObject>
         <customObject id="gm3-L7-WB3" customClass="AppDelegate" customModule="bad_menu_volume" customModuleProvider="target"/>
         <customObject id="t7X-O3-rJG" customClass="StatusMenuController" customModule="bad_menu_volume" customModuleProvider="target">
             <connections>
                 <outlet property="statusMenu" destination="a1o-Y7-xxw" id="PQb-RI-81Z"/>
+                <outlet property="weatherView" destination="TiE-1G-mwf" id="tlE-LR-POG"/>
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
@@ -28,6 +37,10 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="J9k-Sf-Efy"/>
+                <menuItem title="Weather" id="HMt-UL-NfK">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="7LX-Gf-eiD"/>
                 <menuItem title="Quit" id="MiN-gd-hiA">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
@@ -37,5 +50,35 @@
             </items>
             <point key="canvasLocation" x="-65.5" y="-193.5"/>
         </menu>
+        <customView id="TiE-1G-mwf" customClass="WeatherView" customModule="bad_menu_volume" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="265" height="90"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wq7-oA-zBn">
+                    <rect key="frame" x="20" y="20" width="50" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="iQ0-FJ-ZGf"/>
+                </imageView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yau-Az-tzQ">
+                    <rect key="frame" x="78" y="53" width="37" height="17"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="City" placeholderString="City Stuff" id="y7P-cA-6AK">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iho-0W-0NK">
+                    <rect key="frame" x="78" y="20" width="37" height="17"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Text" placeholderString="Some other text" id="je8-aC-4vV">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <point key="canvasLocation" x="29.5" y="-9"/>
+        </customView>
     </objects>
 </document>
