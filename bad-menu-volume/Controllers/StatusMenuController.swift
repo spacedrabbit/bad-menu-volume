@@ -11,11 +11,11 @@ import Cocoa
 class StatusMenuController: NSObject {
   
   @IBOutlet weak var statusMenu: NSMenu!
-  @IBOutlet weak var weatherView: WeatherView!
   
   let statusItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
   let weatherAPI = WeatherAPI()
   var weatherMenuItem: NSMenuItem!
+  let weatherController = WeatherViewController(nibName: "MainMenu", bundle: Bundle.main)
   
   override func awakeFromNib() {
     let icon = #imageLiteral(resourceName: "StatusBarButtonImage")
@@ -24,7 +24,7 @@ class StatusMenuController: NSObject {
     statusItem.menu = statusMenu
     
     weatherMenuItem = statusMenu.item(withTitle: "Weather")
-    weatherMenuItem.view = weatherView
+    weatherMenuItem.view = weatherController?.weatherView
     
 //    updateWeather()
   }
@@ -37,8 +37,7 @@ class StatusMenuController: NSObject {
         let weatherMenuItm = self.statusMenu.item(withTitle: "Weather")
       else { return }
       
-     self.weatherView.update(validWeather)
-      
+     self.weatherController?.weatherView?.update(validWeather)
     }
   }
   

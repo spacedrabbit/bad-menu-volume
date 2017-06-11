@@ -6,25 +6,25 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication"/>
+        <customObject id="-2" userLabel="File's Owner" customClass="WeatherView" customModule="bad_menu_volume" customModuleProvider="target"/>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application">
+        <viewController nibName="MainMenu" id="yl4-yG-611" customClass="WeatherViewController" customModule="bad_menu_volume" customModuleProvider="target"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject">
             <connections>
                 <outlet property="delegate" destination="gm3-L7-WB3" id="yFl-H4-gXa"/>
             </connections>
         </customObject>
         <customObject id="4gL-KN-V3U" customClass="WeatherView" customModule="bad_menu_volume" customModuleProvider="target">
             <connections>
-                <outlet property="imageView" destination="wq7-oA-zBn" id="j6I-H9-cCl"/>
-                <outlet property="tempMinMax" destination="iho-0W-0NK" id="Tpa-1A-aqI"/>
-                <outlet property="temperatureText" destination="yau-Az-tzQ" id="So0-YA-I8a"/>
+                <outlet property="imageView" destination="wq7-oA-zBn" id="r9r-E3-8hX"/>
+                <outlet property="tempMinMax" destination="iho-0W-0NK" id="uq0-I3-fTF"/>
+                <outlet property="temperatureText" destination="yau-Az-tzQ" id="cat-fe-04h"/>
             </connections>
         </customObject>
         <customObject id="gm3-L7-WB3" customClass="AppDelegate" customModule="bad_menu_volume" customModuleProvider="target"/>
         <customObject id="t7X-O3-rJG" customClass="StatusMenuController" customModule="bad_menu_volume" customModuleProvider="target">
             <connections>
                 <outlet property="statusMenu" destination="a1o-Y7-xxw" id="PQb-RI-81Z"/>
-                <outlet property="weatherView" destination="TiE-1G-mwf" id="tlE-LR-POG"/>
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
@@ -78,6 +78,11 @@
                     </textFieldCell>
                 </textField>
             </subviews>
+            <connections>
+                <outlet property="imageView" destination="wq7-oA-zBn" id="2hN-0V-hhB"/>
+                <outlet property="tempMinMax" destination="iho-0W-0NK" id="eGv-MQ-QQh"/>
+                <outlet property="temperatureText" destination="yau-Az-tzQ" id="yAX-ir-ERP"/>
+            </connections>
             <point key="canvasLocation" x="29.5" y="-9"/>
         </customView>
     </objects>
